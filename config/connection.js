@@ -1,6 +1,9 @@
+require("dotenv").config()
+
+
 module.exports = {
-    HOST:"144.76.184.38",
-    USER :"salesutility",
-    PASSWORD :"zVLrKQdH22D7G6QG",
-    DB :"salesutility_dev"
+    HOST:process.env.DB_HOST,
+    USER :process.env.DB_USER,
+    PASSWORD :process.env.DB_PASS,
+    DB :process.env.MYSQL_DB    
 }

@@ -1,5 +1,8 @@
-USER = 'dora.chinmay567@gmail.com'
-PASS = 'uppvzfozblslkrqx'
+require("dotenv").config()
+
+
+USER = ""
+PASS = ""
 
 
 module.exports = {USER,PASS}
