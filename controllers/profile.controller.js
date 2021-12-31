@@ -12,11 +12,11 @@ const contact = async(req,res)=>{
         let data = await Profile.create({full_name:req.body.full_name,company_name:req.body.company_name,
             email:req.body.email,subject:req.body.subject,messages:req.body.message})
             if (data) {
-                res.json({
+                res.status(200).json({
                     message: "Data inserted Successfully !!!"
                 })
             }else{
-                res.json({
+                res.status(503).json({
                     message: "Oops !! Something went wrong"
                 })
             } 
