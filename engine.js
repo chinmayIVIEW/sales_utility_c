@@ -37,7 +37,7 @@ app.get('/',(req,res)=>{
 
 
 
-db.sequelize.sync({force:false})
+db.sequelize.sync({force:true})
 .then(()=>{
     console.log("table created")
 })
