@@ -7,7 +7,7 @@ const {USER,PASS} = require('./gmail.cred')
 
 
 const contact = async(req,res)=>{
-    res.set('Access-Control-Allow-Origin', ' https://gifted-edison-2d44d6.netlify.app')
+    res.set('Access-Control-Allow-Origin', '*')
     try {
         let data = await Profile.create({full_name:req.body.full_name,company_name:req.body.company_name,
             email:req.body.email,subject:req.body.subject,messages:req.body.message})
@@ -55,4 +55,24 @@ const contact = async(req,res)=>{
 }
 
 
-module.exports = {contact}
+const contact_show = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*')
+    try {
+        let data = await Profile.findAll()
+        if(data){
+            res.status(200).json({
+                result : data
+            })
+        }else{
+            res.status(503).json({
+                message: "Oops !! Something went wrong"
+            })
+        } 
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+module.exports = {contact,contact_show}

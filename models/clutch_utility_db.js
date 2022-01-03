@@ -2,25 +2,23 @@
 module.exports = (sequelize,DataTypes)=>{
     const profile = sequelize.define("profile",{
         full_name :{
-            type: DataTypes.STRING,
-            defaultValue: null
+            type: DataTypes.STRING
         },
         company_name : {
-            type : DataTypes.STRING,
-            defaultValue: null
+            type : DataTypes.STRING
         },
         email : {
-            type : DataTypes.STRING,
+            type : DataTypes.STRING
             // unique : true,
-            allowNull:false
         },
         subject : {
-            type : DataTypes.STRING,
-            defaultValue: null
+            type : DataTypes.STRING
         },
         messages : {
-            type : DataTypes.STRING,
-            defaultValue: null
+            type : DataTypes.STRING
+        },
+        add_company : {
+            type : DataTypes.BOOLEAN
         }
     })
     return profile
